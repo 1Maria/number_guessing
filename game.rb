@@ -1,9 +1,9 @@
 class Game
 
   def initialize
-    @chosen = rand(1..101)
+    @chosen = rand(1..100)
     @count = 0
-    #@previous_guesses = []
+    @previous_guesses = []
   end
 
   def pick_number
@@ -11,7 +11,7 @@ class Game
     if @count < 6
       puts "Please select a number from 1 to 100."
       @number = gets.chomp.to_i
-      @previous_guesses = []
+      #@previous_guesses = []
       evaluate_guess
     else
       puts "You have no guesses left. Your game is over."
@@ -31,7 +31,6 @@ class Game
     puts @previous_guesses
     if @previous_guesses.include?(@number)
       puts "You already guessed that, silly! Guess a new number."
-      @previous_guesses << @number
       pick_number
       #guesses
     elsif @number == @chosen
@@ -64,4 +63,5 @@ class Game
   # end
 end
 
-Game.new.pick_number
+game = Game.new
+game.pick_number
