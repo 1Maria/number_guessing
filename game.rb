@@ -13,7 +13,7 @@ class Game
       #@previous_guesses = []
       evaluate_guess
     else
-      puts "You have no guesses left. Your game is over."
+      puts "Sorry, you're out of guesses. You lose."
       puts "Would you like to play again? (Y/N)"
       @response = gets.chomp.downcase
       if @response == "y" || @response == "yes"
