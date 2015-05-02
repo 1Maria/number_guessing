@@ -7,8 +7,12 @@ class Game
   end
 
   def pick_number
-    if @count < 5
-      puts "Please select a number from 1 to 100."
+    if @count == 0
+      puts "Please select a number from 1 to 100 and press enter."
+      @number = gets.chomp.to_i
+      evaluate_guess
+    elsif @count < 5
+      puts "Please guess again."
       @number = gets.chomp.to_i
       #@previous_guesses = []
       evaluate_guess
